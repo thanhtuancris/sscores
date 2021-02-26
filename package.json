@@ -1,0 +1,58 @@
+{
+  "_args": [
+    [
+      "sscores@7.1.12",
+      "C:\\Users\\TuanCR\\Documents\\thanhtuan\\nodejs_project\\StudentSocial_API"
+    ]
+  ],
+  "_from": "sscores@7.1.12",
+  "_id": "sscores@7.1.12",
+  "_inBundle": false,
+  "_integrity": "sha512-2tnc0UtvkZMYklpvWxBAAczu+ikW45/Qr+QhqDRzerjOQnXSDSai3Cd0zcTGwc0Z3g3XPracGak3BjWmK6nEEg==",
+  "_location": "/sscores",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "sscores@7.1.12",
+    "name": "sscores",
+    "escapedName": "sscores",
+    "rawSpec": "7.1.12",
+    "saveSpec": null,
+    "fetchSpec": "7.1.12"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/sscores/-/sscores-7.1.12.tgz",
+  "_shasum": "875e30fa10c5a416d2b5f3433921f02344b7c5db",
+  "_spec": "7.1.12",
+  "_where": "C:\\Users\\TuanCR\\Documents\\thanhtuan\\nodejs_project\\StudentSocial_API",
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/nht98/sscore/issues"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
+    "jsdom": "^12.0.0",
+    "md5": "^2.2.1",
+    "moment": "^2.22.2",
+    "request": "^2.88.0",
+    "request-promise-native": "^1.0.5",
+    "xls-parse": "^1.0.4"
+  },
+  "deprecated": false,
+  "description": "Dùng lệnh trong terminal để thiết lập tài khoản test!! declare -x Username=\"DTC145D4801030038\" declare -x Password=\"MatKhauTaiKhoan\"",
+  "homepage": "https://github.com/nht98/sscore#readme",
+  "license": "ISC",
+  "main": "TnuCore.js",
+  "name": "sscores",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nht98/sscore.git"
+  },
+  "scripts": {
+    "test": "node test $Username $Password"
+  },
+  "version": "7.1.12"
+}
