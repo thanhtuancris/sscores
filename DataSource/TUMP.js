@@ -473,7 +473,7 @@ module.exports = function () {
                         $(dotThi).find("td").each(function (_k, td) {
                             let kq = $(td).text().trim();
                             if (kq == "") {
-                                kq = "0"
+                                kq = ""
                             }
                             switch (_k) {
                                 case 1:
