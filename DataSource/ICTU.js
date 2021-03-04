@@ -466,7 +466,6 @@ module.exports = function () {
                         keys: [],
                         values: []
                     };
-
                     $("#tblStudentMark tr").each(function (k, tr) {
                         if (k == 0) {
                             $(tr).find("td").each(function (_k, td) {
@@ -482,7 +481,7 @@ module.exports = function () {
                             });
                         }
                     });
-
+                    
                     var tb = new TnuMarkTable();
                     tb.tongsotc = arr.values[4].text();
                     tb.sotctuongduong = arr.values[5].text();
@@ -491,20 +490,31 @@ module.exports = function () {
                     tb.dtbcqd = arr.values[8].text();
                     tb.somonkhongdat = arr.values[9].text();
                     tb.sotckhongdat = arr.values[10].text();
-                    tb.dtbxltn = arr.values[11].text();
-                    tb.dtbmontn = arr.values[12].text();
-                    pivot = 11;
+                    colum = arr.labels[0].attr("colspan")-1;
+                    
+                    if(colum >= 11){
+                        tb.dtbxltn = arr.values[11].text();
+                    }else{
+                        tb.dtbxltn = ""
+                    }
+                    if(colum >= 12){
+                        tb.dtbmontn = arr.values[12].text();
+                    }else{
+                        tb.dtbmontn = ""
+                    }
+
+
+                    
+                    pivot = colum + 1;
                     for (var i = 1; i < arr.labels.length; i++) {
                             var label = arr.labels[i];
                             var numCols = parseInt(label.attr("colspan"));
                             var txt = label.text().trim();
                             var txts = txt.split("_", 2);
                             if (numCols && txts.length == 2) {
-
                                 var maMon = txts[0];
                                 var tenMon = txts[1].substr(0, txts[1].length - 4);
                                 var soTC = txts[1].substr(-2, 1);
-
                                 var point = {
                                     CC: "",
                                     THI: "",
@@ -525,8 +535,8 @@ module.exports = function () {
                                         // console.log(numCols)
                                     }
                                 }
-
                                 tb.AddEntry(maMon, tenMon, soTC, txt, point.CC, point.THI, point.TKHP, point["Chữ"], point);
+                                console.log(tb);
                             }
                     }
                     resolve([tb]);
