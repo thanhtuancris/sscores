@@ -268,17 +268,15 @@ module.exports = function () {
                                 fs.unlinkSync(xlsFilePath);
                                 // data.push(xlsFilePath, sheets);
                                 var $ = base.ParseHtml(raw.substr(raw.indexOf('<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" >')));
-
                                 for (var sheetName in sheets) {
                                     var sheet = sheets[sheetName];
-
                                     for (var i = 10; i < sheet.length - 9; i++) {
                                         // console.log( i+" "+sheet[i]);
                                         var row = sheet[i];
                                         var thu = ICTU_WDAY[row[0]];
                                         var maMon = row[1];
-                                        var hocPhan = row[4];
-                                        var giaoVien = row[7];
+                                        var hocPhan = row[4].replace('"', '');
+                                        var giaoVien = (row.length <= 13) ? row[7]: row[10];
                                         var dot = $("#drpTerm option[selected]").text().trim();
                                         var hinhThuc =
                                             hocPhan.match(/\.TL[0-9]/ig) ? "TL" : false ||
@@ -290,7 +288,6 @@ module.exports = function () {
                                                 parseInt(row[8].substr(1)),
                                                 parseInt(row[9]),
                                             ];
-
                                         }
                                         if (row.length == 13) {
                                             tiets = [
@@ -306,16 +303,42 @@ module.exports = function () {
                                                 parseInt(row[10]),
                                                 parseInt(row[11]),
                                             ];
+                                           
                                         }
                                         if (row.length == 15) {
                                             tiets = [
-                                                parseInt(row[8].substr(1)),
-                                                parseInt(row[9]),
-                                                parseInt(row[10]),
-                                                parseInt(row[11]),
+                                                // parseInt(row[8].substr(1)),
+                                                // parseInt(row[9]),
+                                                // parseInt(row[10].substr(1)),
+                                                parseInt(row[11].substr(1)),
                                                 parseInt(row[12]),
                                             ];
                                         }
+                                        if (row.length == 16) {
+                                            tiets = [
+                                                parseInt(row[11].substr(1)),
+                                                parseInt(row[12]),
+                                                parseInt(row[13]),
+                                            ];
+                                        }
+                                        if (row.length == 17) {
+                                            tiets = [
+                                                parseInt(row[11].substr(1)),
+                                                parseInt(row[12]),
+                                                parseInt(row[13]),
+                                                parseInt(row[14]),
+                                            ];
+                                        }
+                                        if (row.length == 18) {
+                                            tiets = [
+                                                parseInt(row[11].substr(1)),
+                                                parseInt(row[12]),
+                                                parseInt(row[13]),
+                                                parseInt(row[14]),
+                                                parseInt(row[15]),
+                                            ];
+                                        }
+                                        console.log(tiets);
                                         var diaDiem = row[8 + tiets.length + 0];
                                         var timeRange = row[8 + tiets.length + 1].split("-");
                                         var startTime = moment(timeRange[0], "DD/MM/YYYY").toDate();
