@@ -54,5 +54,5 @@
   "scripts": {
     "test": "node test $Username $Password"
   },
-  "version": "7.1.12"
+  "version": "7.1.13"
 }
