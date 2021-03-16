@@ -536,7 +536,6 @@ module.exports = function () {
                                     }
                                 }
                                 tb.AddEntry(maMon, tenMon, soTC, txt, point.CC, point.THI, point.TKHP, point["Chữ"], point);
-                                console.log(tb);
                             }
                     }
                     resolve([tb]);
