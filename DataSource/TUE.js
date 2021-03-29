@@ -523,7 +523,7 @@ module.exports = function () {
                 tb.dtbxltn = "0";
                 tb.dtbmontn = "0";
                 for (var i = 0; i < arrDIem.length; i++) {
-                    tb.AddEntry(arrDIem[i].mamon, arrDIem[i].tenMon, arrDIem[i].sotc, arrDIem[i].cc, arrDIem[i].thi, arrDIem[i].tkhp, arrDIem[i].diemChu);
+                    tb.AddEntry(arrDIem[i].mamon, arrDIem[i].tenMon, arrDIem[i].sotc, arrDIem[i].tenMon, arrDIem[i].cc, arrDIem[i].thi, arrDIem[i].tkhp, arrDIem[i].diemChu);
                 }
                 resolve([tb]);
             }, reject);
