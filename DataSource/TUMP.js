@@ -85,7 +85,7 @@ module.exports = function () {
                 post["btnSubmit"] = "Đăng nhập";
 
                 base.Post(Endpoints.Login(), post).then(function (resp) {
-                    resolve(resp);
+                    resolve(false);
                 }, function (err) {
                     if (err.response.statusCode == 302) {
                         __URLTOKEN__ = "/";
